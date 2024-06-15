@@ -128,8 +128,6 @@ func GetWhoisData(domain string) []string {
 	body := new(bytes.Buffer)
 	body.ReadFrom(resp.Body)
 
-	log.Println(body.String())
-
 	bodyString := body.String()
 	err = json.Unmarshal([]byte(bodyString), &response)
 	if err != nil {
